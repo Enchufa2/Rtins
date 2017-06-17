@@ -1,0 +1,16 @@
+Package: Rtins
+Type: Package
+Title: Tools for Reading and Parsing Network Packet Capture (PCAP) Files
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Iñaki", "Ucar", email="i.ucar86@gmail.com", role=c("aut", "cph", "cre")))
+Description: Provides tools for analysing network captures on top of 'libtins' 
+    <http://libtins.github.io>, a high-level, multiplatform C++ network packet 
+    decoding and crafting library.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 3.3.0)
+Imports: Rcpp
+LinkingTo: Rcpp (>= 0.12.11)
+SystemRequirements: C++11, libtins (>= 3.5)
+RoxygenNote: 6.0.1

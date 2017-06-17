@@ -1,0 +1,49 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# Rtins: Tools for Reading and Parsing Network Packet Capture (PCAP) Files
+
+The **Rtins** package provides tools for analysing network captures on top of [`libtins`](http://libtins.github.io), a high-level, multiplatform C++ network packet decoding and crafting library.
+
+## Installation
+
+You need to install the [`libtins`](http://libtins.github.io) library first. And as a minimum requirement, `libtins` needs the development package of `libpcap` (or `WinPcap` for Windows). On Linux,
+
+```{bash, eval=FALSE}
+# install libpcap-devel, openssl-devel is also recommended
+git clone https://github.com/mfontanini/libtins.git
+mkdir libtins/build
+cd libtins/build
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+make
+sudo make install
+```
+
+Please, refer to the `libtins` documentation for the installation in other platforms. Then, `Rtins` can be installed using `devtools`:
+
+```{r, eval=FALSE}
+devtools::install_github("Enchufa2/Rtins")
+```
+
+## Usage
+
+```{r}
+library(Rtins)
+
+fname <- system.file("pcaps/http.cap", package="Rtins")
+pcap <- read_pcap(fname)
+head(pcap)
+summary(pcap)
+head(read_pcap(fname, "udp port 53"))
+```
