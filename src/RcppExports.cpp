@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // read_pcap_
 DataFrame read_pcap_(std::string fname, std::string filter, unsigned int layers);
-RcppExport SEXP Rtins_read_pcap_(SEXP fnameSEXP, SEXP filterSEXP, SEXP layersSEXP) {
+RcppExport SEXP _Rtins_read_pcap_(SEXP fnameSEXP, SEXP filterSEXP, SEXP layersSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -20,7 +20,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"Rtins_read_pcap_", (DL_FUNC) &Rtins_read_pcap_, 3},
+    {"_Rtins_read_pcap_", (DL_FUNC) &_Rtins_read_pcap_, 3},
     {NULL, NULL, 0}
 };
 
