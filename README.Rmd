@@ -12,9 +12,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Rtins: Tools for Reading and Parsing Network Packet Capture (PCAP) Files
+# Rtins: Tools for Reading and Parsing Network Packet Capture (PCAP) Files in R
 
-The **Rtins** package provides tools for analysing network captures on top of [`libtins`](http://libtins.github.io), a high-level, multiplatform C++ network packet decoding and crafting library.
+The **Rtins** package provides tools for analysing network captures in R on top of [`libtins`](http://libtins.github.io), a high-level, multiplatform C++ network packet decoding and crafting library.
 
 ## Installation
 

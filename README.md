@@ -1,9 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-Rtins: Tools for Reading and Parsing Network Packet Capture (PCAP) Files
-========================================================================
+Rtins: Tools for Reading and Parsing Network Packet Capture (PCAP) Files in R
+=============================================================================
 
-The **Rtins** package provides tools for analysing network captures on top of [`libtins`](http://libtins.github.io), a high-level, multiplatform C++ network packet decoding and crafting library.
+The **Rtins** package provides tools for analysing network captures in R on top of [`libtins`](http://libtins.github.io), a high-level, multiplatform C++ network packet decoding and crafting library.
 
 Installation
 ------------
@@ -50,12 +50,12 @@ head(pcap)
 #> 5 00:00:01:00:00:00           40         IP  65.208.228.223
 #> 6 00:00:01:00:00:00         1420         IP  65.208.228.223
 #>       layer_2_dst layer_3_size layer_3_id layer_3_src layer_3_dst
-#> 1  65.208.228.223           28        TCP       49374       25728
-#> 2 145.254.160.237           28        TCP       20504       49790
-#> 3  65.208.228.223           20        TCP           0           0
-#> 4  65.208.228.223          499        TCP           0           0
-#> 5 145.254.160.237           20        TCP           0           0
-#> 6 145.254.160.237         1400        TCP           0           0
+#> 1  65.208.228.223           28        TCP        3372          80
+#> 2 145.254.160.237           28        TCP          80        3372
+#> 3  65.208.228.223           20        TCP        3372          80
+#> 4  65.208.228.223          499        TCP        3372          80
+#> 5 145.254.160.237           20        TCP          80        3372
+#> 6 145.254.160.237         1400        TCP          80        3372
 #>   payload_size
 #> 1            0
 #> 2            0
@@ -65,7 +65,7 @@ head(pcap)
 #> 6         1380
 summary(pcap)
 #> File info
-#>   Capture file   : /home/xxx/R/x86_64-redhat-linux-gnu-library/3.3/Rtins/pcaps/http.cap
+#>   Capture file   : /home/xxx/R/x86_64-redhat-linux-gnu-library/3.4/Rtins/pcaps/http.cap
 #>   Filter applied : 
 #>   Layers decoded : 3
 #>   Length (bytes) : 25803
