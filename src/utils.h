@@ -12,6 +12,7 @@ inline std::string get_src(const PDU* pdu) {
   case Dot11::pdu_flag:
     return ((Dot11*)pdu)->addr1().to_string();
   case Dot3::pdu_flag:
+    return ((Dot3*)pdu)->src_addr().to_string();
   case EthernetII::pdu_flag:
     return ((EthernetII*)pdu)->src_addr().to_string();
   case IP::pdu_flag:
@@ -23,6 +24,7 @@ inline std::string get_src(const PDU* pdu) {
   case SLL::pdu_flag:
     return ((SLL*)pdu)->address().to_string();
   case TCP::pdu_flag:
+    return std::to_string(((TCP*)pdu)->sport());
   case UDP::pdu_flag:
     return std::to_string(((UDP*)pdu)->sport());
   default:
@@ -35,6 +37,7 @@ inline std::string get_dst(const PDU* pdu) {
   case ARP::pdu_flag:
     return ((ARP*)pdu)->target_ip_addr().to_string();
   case Dot3::pdu_flag:
+    return ((Dot3*)pdu)->dst_addr().to_string();
   case EthernetII::pdu_flag:
     return ((EthernetII*)pdu)->dst_addr().to_string();
   case IP::pdu_flag:
@@ -42,6 +45,7 @@ inline std::string get_dst(const PDU* pdu) {
   case IPv6::pdu_flag:
     return ((IPv6*)pdu)->dst_addr().to_string();
   case TCP::pdu_flag:
+    return std::to_string(((TCP*)pdu)->dport());
   case UDP::pdu_flag:
     return std::to_string(((UDP*)pdu)->dport());
   default:
